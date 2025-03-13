@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports - HR System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar">
+        <div class="logo">
+          <h2>HR System</h2>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="hr-dashboard.html"><i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li>
+            <a href="employees.html"><i class="fas fa-users"></i>Employees</a>
+          </li>
+          <li>
+            <a href="attendance.html"><i class="fas fa-clock"></i>Attendance</a>
+          </li>
+          <li>
+            <a href="leave-management.html"
+              ><i class="fas fa-calendar-alt"></i>Leave Management</a
+            >
+          </li>
+          <li>
+            <a href="payroll.html"
+              ><i class="fas fa-money-bill-wave"></i>Payroll</a
+            >
+          </li>
+          <li>
+            <a href="performance.html"
+              ><i class="fas fa-chart-line"></i>Performance</a
+            >
+          </li>
+          <li class="active">
+            <a href="reports.html"><i class="fas fa-file-alt"></i>Reports</a>
+          </li>
+          <li>
+            <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
+          </li>
+          <li class="logout">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <header>
+          <div class="header-content">
+            <h1>Reports</h1>
+            <div class="report-actions">
+              <button class="generate-btn">
+                <i class="fas fa-file-export"></i> Generate Report
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <div class="reports-grid">
+          <div class="report-card">
+            <div class="report-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="report-info">
+              <h3>Employee Report</h3>
+              <p>Complete employee statistics and details</p>
+            </div>
+            <div class="report-actions">
+              <button class="view-btn"><i class="fas fa-eye"></i></button>
+              <button class="download-btn">
+                <i class="fas fa-download"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="report-info">
+              <h3>Attendance Report</h3>
+              <p>Attendance and time tracking analysis</p>
+            </div>
+            <div class="report-actions">
+              <button class="view-btn"><i class="fas fa-eye"></i></button>
+              <button class="download-btn">
+                <i class="fas fa-download"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="report-info">
+              <h3>Leave Report</h3>
+              <p>Leave management and statistics</p>
+            </div>
+            <div class="report-actions">
+              <button class="view-btn"><i class="fas fa-eye"></i></button>
+              <button class="download-btn">
+                <i class="fas fa-download"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-icon">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <div class="report-info">
+              <h3>Payroll Report</h3>
+              <p>Salary and compensation analysis</p>
+            </div>
+            <div class="report-actions">
+              <button class="view-btn"><i class="fas fa-eye"></i></button>
+              <button class="download-btn">
+                <i class="fas fa-download"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="report-info">
+              <h3>Performance Report</h3>
+              <p>Employee performance analytics</p>
+            </div>
+            <div class="report-actions">
+              <button class="view-btn"><i class="fas fa-eye"></i></button>
+              <button class="download-btn">
+                <i class="fas fa-download"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-icon">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <div class="report-info">
+              <h3>Department Report</h3>
+              <p>Department-wise analytics</p>
+            </div>
+            <div class="report-actions">
+              <button class="view-btn"><i class="fas fa-eye"></i></button>
+              <button class="download-btn">
+                <i class="fas fa-download"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Report Generation Modal -->
+        <div class="modal" id="generateReportModal">
+          <div class="modal-content">
+            <h2>Generate Report</h2>
+            <form id="generateReportForm">
+              <div class="form-group">
+                <label>Report Type</label>
+                <select required>
+                  <option value="">Select Report Type</option>
+                  <option value="employee">Employee Report</option>
+                  <option value="attendance">Attendance Report</option>
+                  <option value="leave">Leave Report</option>
+                  <option value="payroll">Payroll Report</option>
+                  <option value="performance">Performance Report</option>
+                  <option value="department">Department Report</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Date Range</label>
+                <div class="date-range">
+                  <input type="date" required />
+                  <span>to</span>
+                  <input type="date" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Format</label>
+                <select required>
+                  <option value="pdf">PDF</option>
+                  <option value="excel">Excel</option>
+                  <option value="csv">CSV</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Include</label>
+                <div class="checkbox-group">
+                  <label>
+                    <input type="checkbox" checked /> Charts and Graphs
+                  </label>
+                  <label> <input type="checkbox" checked /> Summary </label>
+                  <label>
+                    <input type="checkbox" checked /> Detailed Data
+                  </label>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="generate-btn">Generate</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="common.js"></script>
+    <script src="reports.js"></script>
+  </body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management - HR System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="logo">
+          <h2>HR System</h2>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="hr-dashboard.html"
+              ><i class="fas fa-home"></i><span>Dashboard</span></a
+            >
+          </li>
+          <li class="active">
+            <a href="employees.html"
+              ><i class="fas fa-users"></i><span>Employees</span></a
+            >
+          </li>
+          <li>
+            <a href="attendance.html"
+              ><i class="fas fa-clock"></i><span>Attendance</span></a
+            >
+          </li>
+          <li>
+            <a href="leave-management.html"
+              ><i class="fas fa-calendar-alt"></i
+              ><span>Leave Management</span></a
+            >
+          </li>
+          <li>
+            <a href="payroll.html"
+              ><i class="fas fa-money-bill-wave"></i><span>Payroll</span></a
+            >
+          </li>
+          <li>
+            <a href="performance.html"
+              ><i class="fas fa-chart-line"></i><span>Performance</span></a
+            >
+          </li>
+          <li>
+            <a href="reports.html"
+              ><i class="fas fa-file-alt"></i><span>Reports</span></a
+            >
+          </li>
+          <li>
+            <a href="settings.html"
+              ><i class="fas fa-cog"></i><span>Settings</span></a
+            >
+          </li>
+          <li class="logout">
+            <a href="login.html"
+              ><i class="fas fa-sign-out-alt"></i><span>Logout</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header>
+          <div class="header-content">
+            <h1>Employee Management</h1>
+            <button class="add-btn" id="addEmployeeBtn">
+              <i class="fas fa-plus"></i> Add Employee
+            </button>
+          </div>
+        </header>
+
+        <div class="employee-summary">
+          <div class="summary-card">
+            <i class="fas fa-users"></i>
+            <div class="summary-info">
+              <h3>Total Employees</h3>
+              <p>150</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-user-plus"></i>
+            <div class="summary-info">
+              <h3>New This Month</h3>
+              <p>5</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-user-clock"></i>
+            <div class="summary-info">
+              <h3>On Probation</h3>
+              <p>3</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-user-check"></i>
+            <div class="summary-info">
+              <h3>Active</h3>
+              <p>145</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="employee-filters">
+          <div class="search-bar">
+            <input type="text" placeholder="Search employee..." />
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="filter-options">
+            <select>
+              <option value="">Department</option>
+              <option value="it">IT</option>
+              <option value="hr">HR</option>
+              <option value="finance">Finance</option>
+            </select>
+            <select>
+              <option value="">Status</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+              <option value="probation">Probation</option>
+            </select>
+            <select>
+              <option value="">Sort By</option>
+              <option value="name">Name</option>
+              <option value="date">Join Date</option>
+              <option value="department">Department</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Employee List -->
+        <div class="employee-list">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Department</th>
+                <th>Position</th>
+                <th>Join Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="employee-info">
+                    <img src="https://via.placeholder.com/40" alt="John Doe" />
+                    <span>John Doe</span>
+                  </div>
+                </td>
+                <td>IT</td>
+                <td>Senior Developer</td>
+                <td>2024-01-15</td>
+                <td><span class="status active">Active</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="view-btn"><i class="fas fa-eye"></i></button>
+                    <button class="edit-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="delete-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="employee-info">
+                    <img
+                      src="https://via.placeholder.com/40"
+                      alt="Sarah Johnson"
+                    />
+                    <span>Sarah Johnson</span>
+                  </div>
+                </td>
+                <td>IT</td>
+                <td>Senior Developer</td>
+                <td>2024-01-15</td>
+                <td><span class="status active">Active</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="view-btn"><i class="fas fa-eye"></i></button>
+                    <button class="edit-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="delete-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="employee-info">
+                    <img
+                      src="https://via.placeholder.com/40"
+                      alt="Michael Chen"
+                    />
+                    <span>Michael Chen</span>
+                  </div>
+                </td>
+                <td>HR</td>
+                <td>HR Manager</td>
+                <td>2024-01-15</td>
+                <td><span class="status active">Active</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="view-btn"><i class="fas fa-eye"></i></button>
+                    <button class="edit-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="delete-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="employee-info">
+                    <img
+                      src="https://via.placeholder.com/40"
+                      alt="Emily Davis"
+                    />
+                    <span>Emily Davis</span>
+                  </div>
+                </td>
+                <td>Finance</td>
+                <td>Accountant</td>
+                <td>2024-01-15</td>
+                <td><span class="status active">Active</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="view-btn"><i class="fas fa-eye"></i></button>
+                    <button class="edit-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="delete-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="employee-info">
+                    <img
+                      src="https://via.placeholder.com/40"
+                      alt="David Wilson"
+                    />
+                    <span>David Wilson</span>
+                  </div>
+                </td>
+                <td>Marketing</td>
+                <td>Marketing Specialist</td>
+                <td>2024-01-15</td>
+                <td><span class="status active">Active</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="view-btn"><i class="fas fa-eye"></i></button>
+                    <button class="edit-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="delete-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Add Employee Modal -->
+        <div class="modal" id="addEmployeeModal">
+          <div class="modal-content">
+            <h2>Add New Employee</h2>
+            <form id="addEmployeeForm">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" required />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" required />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" required />
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" required />
+              </div>
+              <div class="form-group">
+                <label>Department</label>
+                <select required>
+                  <option value="">Select Department</option>
+                  <option value="it">IT</option>
+                  <option value="hr">HR</option>
+                  <option value="finance">Finance</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Position</label>
+                <input type="text" required />
+              </div>
+              <div class="form-group">
+                <label>Join Date</label>
+                <input type="date" required />
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <select required>
+                  <option value="active">Active</option>
+                  <option value="probation">Probation</option>
+                  <option value="inactive">Inactive</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Profile Picture</label>
+                <input type="file" accept="image/*" />
+              </div>
+              <div class="form-actions">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Add Employee</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="common.js"></script>
+    <script src="employees.js"></script>
+  </body>
+</html>

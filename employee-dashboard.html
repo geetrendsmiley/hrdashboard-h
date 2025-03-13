@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar">
+        <div class="logo">
+          <h2>HR System</h2>
+        </div>
+        <ul class="nav-links">
+          <li class="active">
+            <a href="#dashboard"><i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li>
+            <a href="#profile"><i class="fas fa-user"></i>My Profile</a>
+          </li>
+          <li>
+            <a href="#attendance"><i class="fas fa-clock"></i>My Attendance</a>
+          </li>
+          <li>
+            <a href="#leave"
+              ><i class="fas fa-calendar-alt"></i>Leave Requests</a
+            >
+          </li>
+          <li>
+            <a href="#payslip"
+              ><i class="fas fa-file-invoice-dollar"></i>Payslip</a
+            >
+          </li>
+          <li>
+            <a href="#performance"
+              ><i class="fas fa-chart-line"></i>My Performance</a
+            >
+          </li>
+          <li>
+            <a href="#documents"><i class="fas fa-file-alt"></i>Documents</a>
+          </li>
+          <li>
+            <a href="#settings"><i class="fas fa-cog"></i>Settings</a>
+          </li>
+          <li class="logout">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <header>
+          <div class="header-content">
+            <div class="search-bar">
+              <input type="text" placeholder="Search..." />
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="user-profile">
+              <img src="https://via.placeholder.com/40" alt="Profile" />
+              <span>John Doe</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="stats-container">
+          <div class="stat-card">
+            <i class="fas fa-clock"></i>
+            <div class="stat-info">
+              <h3>Today's Status</h3>
+              <p>Present</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-calendar-check"></i>
+            <div class="stat-info">
+              <h3>Leave Balance</h3>
+              <p>15 Days</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-money-bill-wave"></i>
+            <div class="stat-info">
+              <h3>This Month's Salary</h3>
+              <p>$5,000</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-chart-line"></i>
+            <div class="stat-info">
+              <h3>Performance Score</h3>
+              <p>4.5/5</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="charts-container">
+          <div class="chart-card">
+            <h3>Attendance History</h3>
+            <canvas id="attendanceChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3>Leave History</h3>
+            <canvas id="leaveChart"></canvas>
+          </div>
+        </div>
+
+        <div class="recent-activities">
+          <h3>Recent Activities</h3>
+          <div class="activity-list">
+            <div class="activity-item">
+              <i class="fas fa-clock"></i>
+              <div class="activity-info">
+                <p>Clock in: 9:00 AM</p>
+                <small>Today</small>
+              </div>
+            </div>
+            <div class="activity-item">
+              <i class="fas fa-calendar-alt"></i>
+              <div class="activity-info">
+                <p>Leave request submitted</p>
+                <small>Yesterday</small>
+              </div>
+            </div>
+            <div class="activity-item">
+              <i class="fas fa-file-invoice-dollar"></i>
+              <div class="activity-info">
+                <p>March payslip available</p>
+                <small>2 days ago</small>
+              </div>
+            </div>
+            <div class="activity-item">
+              <i class="fas fa-chart-line"></i>
+              <div class="activity-info">
+                <p>Performance review completed</p>
+                <small>1 week ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="employee-dashboard.js"></script>
+  </body>
+</html>

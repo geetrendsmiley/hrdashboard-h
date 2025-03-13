@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leave Management - HR System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar">
+        <div class="logo">
+          <h2>HR System</h2>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="hr-dashboard.html"><i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li>
+            <a href="employees.html"><i class="fas fa-users"></i>Employees</a>
+          </li>
+          <li>
+            <a href="attendance.html"><i class="fas fa-clock"></i>Attendance</a>
+          </li>
+          <li class="active">
+            <a href="leave-management.html"
+              ><i class="fas fa-calendar-alt"></i>Leave Management</a
+            >
+          </li>
+          <li>
+            <a href="payroll.html"
+              ><i class="fas fa-money-bill-wave"></i>Payroll</a
+            >
+          </li>
+          <li>
+            <a href="performance.html"
+              ><i class="fas fa-chart-line"></i>Performance</a
+            >
+          </li>
+          <li>
+            <a href="reports.html"><i class="fas fa-file-alt"></i>Reports</a>
+          </li>
+          <li>
+            <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
+          </li>
+          <li class="logout">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Same sidebar as dashboard -->
+
+      <main class="main-content">
+        <header>
+          <div class="header-content">
+            <h1>Leave Management</h1>
+          </div>
+        </header>
+
+        <div class="leave-summary">
+          <div class="summary-card">
+            <i class="fas fa-calendar-check"></i>
+            <div class="summary-info">
+              <h3>Pending Requests</h3>
+              <p>12</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-calendar-alt"></i>
+            <div class="summary-info">
+              <h3>Approved</h3>
+              <p>45</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-calendar-times"></i>
+            <div class="summary-info">
+              <h3>Rejected</h3>
+              <p>5</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-users"></i>
+            <div class="summary-info">
+              <h3>On Leave Today</h3>
+              <p>3</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="leave-filters">
+          <div class="search-bar">
+            <input type="text" placeholder="Search leave requests..." />
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="filter-options">
+            <select>
+              <option value="">Status</option>
+              <option value="pending">Pending</option>
+              <option value="approved">Approved</option>
+              <option value="rejected">Rejected</option>
+            </select>
+            <select>
+              <option value="">Leave Type</option>
+              <option value="annual">Annual Leave</option>
+              <option value="sick">Sick Leave</option>
+              <option value="personal">Personal Leave</option>
+              <option value="other">Other</option>
+            </select>
+            <input type="date" placeholder="From Date" />
+            <input type="date" placeholder="To Date" />
+          </div>
+        </div>
+
+        <div class="leave-requests">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Leave Type</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Days</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="employee-info">
+                    <img src="https://via.placeholder.com/40" alt="John Doe" />
+                    <span>John Doe</span>
+                  </div>
+                </td>
+                <td>Annual Leave</td>
+                <td>2024-03-25</td>
+                <td>2024-03-27</td>
+                <td>3</td>
+                <td>Vacation</td>
+                <td><span class="status pending">Pending</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="approve-btn">
+                      <i class="fas fa-check"></i>
+                    </button>
+                    <button class="reject-btn">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <!-- More leave request rows -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Leave Request Details Modal -->
+        <div class="modal" id="leaveDetailsModal">
+          <div class="modal-content">
+            <h2>Leave Request Details</h2>
+            <div class="leave-details">
+              <div class="detail-group">
+                <label>Employee:</label>
+                <p>John Doe</p>
+              </div>
+              <div class="detail-group">
+                <label>Leave Type:</label>
+                <p>Annual Leave</p>
+              </div>
+              <div class="detail-group">
+                <label>Duration:</label>
+                <p>3 days (25 Mar 2024 - 27 Mar 2024)</p>
+              </div>
+              <div class="detail-group">
+                <label>Reason:</label>
+                <p>Vacation with family</p>
+              </div>
+              <div class="detail-group">
+                <label>Status:</label>
+                <p class="status pending">Pending</p>
+              </div>
+              <div class="form-actions">
+                <button class="reject-btn">Reject</button>
+                <button class="approve-btn">Approve</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="common.js"></script>
+    <script src="leave-management.js"></script>
+  </body>
+</html>

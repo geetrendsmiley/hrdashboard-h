@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Management - HR System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- <nav class="sidebar"> -->
+      <!-- Same sidebar as dashboard -->
+      <!-- </nav> -->
+      <nav class="sidebar">
+        <div class="logo">
+          <h2>HR System</h2>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="hr-dashboard.html"><i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li>
+            <a href="employees.html"><i class="fas fa-users"></i>Employees</a>
+          </li>
+          <li class="active">
+            <a href="attendance.html"><i class="fas fa-clock"></i>Attendance</a>
+          </li>
+          <li>
+            <a href="leave-management.html"
+              ><i class="fas fa-calendar-alt"></i>Leave Management</a
+            >
+          </li>
+          <li>
+            <a href="payroll.html"
+              ><i class="fas fa-money-bill-wave"></i>Payroll</a
+            >
+          </li>
+          <li>
+            <a href="performance.html"
+              ><i class="fas fa-chart-line"></i>Performance</a
+            >
+          </li>
+          <li>
+            <a href="reports.html"><i class="fas fa-file-alt"></i>Reports</a>
+          </li>
+          <li>
+            <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
+          </li>
+          <li class="logout">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <header>
+          <div class="header-content">
+            <h1>Attendance Management</h1>
+            <div class="date-picker">
+              <input type="month" id="attendanceMonth" />
+            </div>
+          </div>
+        </header>
+
+        <div class="attendance-summary">
+          <div class="summary-card">
+            <i class="fas fa-users"></i>
+            <div class="summary-info">
+              <h3>Present Today</h3>
+              <p>142/150</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-user-clock"></i>
+            <div class="summary-info">
+              <h3>Late Arrivals</h3>
+              <p>5</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-user-times"></i>
+            <div class="summary-info">
+              <h3>Absent</h3>
+              <p>8</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-clock"></i>
+            <div class="summary-info">
+              <h3>On Leave</h3>
+              <p>3</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="attendance-filters">
+          <div class="search-bar">
+            <input type="text" placeholder="Search employee..." />
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="filter-options">
+            <select>
+              <option value="">Department</option>
+              <option value="it">IT</option>
+              <option value="hr">HR</option>
+              <option value="finance">Finance</option>
+            </select>
+            <select>
+              <option value="">Status</option>
+              <option value="present">Present</option>
+              <option value="absent">Absent</option>
+              <option value="late">Late</option>
+              <option value="leave">On Leave</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="attendance-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Department</th>
+                <th>Date</th>
+                <th>Clock In</th>
+                <th>Clock Out</th>
+                <th>Status</th>
+                <th>Total Hours</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="employee-info">
+                    <img src="https://via.placeholder.com/40" alt="John Doe" />
+                    <span>John Doe</span>
+                  </div>
+                </td>
+                <td>IT</td>
+                <td>2024-03-20</td>
+                <td>09:00 AM</td>
+                <td>05:00 PM</td>
+                <td><span class="status present">Present</span></td>
+                <td>8h</td>
+                <td>
+                  <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                </td>
+              </tr>
+              <!-- More attendance rows -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Attendance Edit Modal -->
+        <div class="modal" id="editAttendanceModal">
+          <div class="modal-content">
+            <h2>Edit Attendance</h2>
+            <form id="editAttendanceForm">
+              <div class="form-group">
+                <label>Date</label>
+                <input type="date" required />
+              </div>
+              <div class="form-group">
+                <label>Clock In</label>
+                <input type="time" required />
+              </div>
+              <div class="form-group">
+                <label>Clock Out</label>
+                <input type="time" required />
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <select required>
+                  <option value="present">Present</option>
+                  <option value="absent">Absent</option>
+                  <option value="late">Late</option>
+                  <option value="leave">On Leave</option>
+                </select>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="common.js"></script>
+    <script src="attendance.js"></script>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Performance Management - HR System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar">
+        <ul class="nav-links">
+          <li>
+            <a href="hr-dashboard.html"><i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li>
+            <a href="employees.html"><i class="fas fa-users"></i>Employees</a>
+          </li>
+          <li>
+            <a href="attendance.html"><i class="fas fa-clock"></i>Attendance</a>
+          </li>
+          <li>
+            <a href="leave-management.html"
+              ><i class="fas fa-calendar-alt"></i>Leave Management</a
+            >
+          </li>
+          <li>
+            <a href="payroll.html"
+              ><i class="fas fa-money-bill-wave"></i>Payroll</a
+            >
+          </li>
+          <li class="active">
+            <a href="performance.html"
+              ><i class="fas fa-chart-line"></i>Performance</a
+            >
+          </li>
+          <li>
+            <a href="reports.html"><i class="fas fa-file-alt"></i>Reports</a>
+          </li>
+          <li>
+            <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
+          </li>
+          <li class="logout">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <header>
+          <div class="header-content">
+            <h1>Performance Management</h1>
+            <button class="add-btn">
+              <i class="fas fa-plus"></i> New Review
+            </button>
+          </div>
+        </header>
+
+        <div class="performance-summary">
+          <div class="summary-card">
+            <i class="fas fa-star"></i>
+            <div class="summary-info">
+              <h3>Average Rating</h3>
+              <p>4.2/5</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-clipboard-check"></i>
+            <div class="summary-info">
+              <h3>Reviews Completed</h3>
+              <p>125/150</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-clock"></i>
+            <div class="summary-info">
+              <h3>Pending Reviews</h3>
+              <p>25</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-trophy"></i>
+            <div class="summary-info">
+              <h3>Top Performers</h3>
+              <p>15</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="performance-charts">
+          <div class="chart-card">
+            <h3>Department Performance</h3>
+            <canvas id="departmentChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3>Rating Distribution</h3>
+            <canvas id="ratingChart"></canvas>
+          </div>
+        </div>
+
+        <div class="performance-filters">
+          <div class="search-bar">
+            <input type="text" placeholder="Search employee..." />
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="filter-options">
+            <select>
+              <option value="">Department</option>
+              <option value="it">IT</option>
+              <option value="hr">HR</option>
+              <option value="finance">Finance</option>
+            </select>
+            <select>
+              <option value="">Rating</option>
+              <option value="5">5 Stars</option>
+              <option value="4">4 Stars</option>
+              <option value="3">3 Stars</option>
+              <option value="2">2 Stars</option>
+              <option value="1">1 Star</option>
+            </select>
+            <select>
+              <option value="">Review Period</option>
+              <option value="q1">Q1 2024</option>
+              <option value="q2">Q2 2024</option>
+              <option value="q3">Q3 2024</option>
+              <option value="q4">Q4 2024</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="performance-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Department</th>
+                <th>Review Period</th>
+                <th>Rating</th>
+                <th>Goals Met</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="employee-info">
+                    <img src="https://via.placeholder.com/40" alt="John Doe" />
+                    <span>John Doe</span>
+                  </div>
+                </td>
+                <td>IT</td>
+                <td>Q1 2024</td>
+                <td>
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>4.5</span>
+                  </div>
+                </td>
+                <td>8/10</td>
+                <td><span class="status completed">Completed</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="view-btn"><i class="fas fa-eye"></i></button>
+                    <button class="edit-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <!-- More performance review rows -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Performance Review Modal -->
+        <div class="modal" id="reviewModal">
+          <div class="modal-content">
+            <h2>Performance Review</h2>
+            <form id="performanceReviewForm">
+              <div class="form-group">
+                <label>Employee</label>
+                <select required>
+                  <option value="">Select Employee</option>
+                  <option value="1">John Doe</option>
+                  <option value="2">Jane Smith</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Review Period</label>
+                <select required>
+                  <option value="">Select Period</option>
+                  <option value="q1">Q1 2024</option>
+                  <option value="q2">Q2 2024</option>
+                </select>
+              </div>
+              <div class="review-sections">
+                <div class="section">
+                  <h4>Performance Metrics</h4>
+                  <div class="metric-group">
+                    <label>Quality of Work</label>
+                    <div class="rating-input">
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                  </div>
+                  <!-- More metrics -->
+                </div>
+                <div class="section">
+                  <h4>Goals & Objectives</h4>
+                  <div class="goals-list">
+                    <!-- Dynamic goals list -->
+                  </div>
+                  <button type="button" class="add-goal-btn">Add Goal</button>
+                </div>
+                <div class="section">
+                  <h4>Comments</h4>
+                  <textarea placeholder="Add your comments here..."></textarea>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save Review</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="common.js"></script>
+    <script src="performance.js"></script>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payroll Management - HR System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar">
+        <div class="logo">
+          <h2>HR System</h2>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="hr-dashboard.html"><i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li>
+            <a href="employees.html"><i class="fas fa-users"></i>Employees</a>
+          </li>
+          <li>
+            <a href="attendance.html"><i class="fas fa-clock"></i>Attendance</a>
+          </li>
+          <li>
+            <a href="leave-management.html"
+              ><i class="fas fa-calendar-alt"></i>Leave Management</a
+            >
+          </li>
+          <li class="active">
+            <a href="payroll.html"
+              ><i class="fas fa-money-bill-wave"></i>Payroll</a
+            >
+          </li>
+          <li>
+            <a href="performance.html"
+              ><i class="fas fa-chart-line"></i>Performance</a
+            >
+          </li>
+          <li>
+            <a href="reports.html"><i class="fas fa-file-alt"></i>Reports</a>
+          </li>
+          <li>
+            <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
+          </li>
+          <li class="logout">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>
+      </nav>
+      Same sidebar as dashboard
+
+      <main class="main-content">
+        <header>
+          <div class="header-content">
+            <h1>Payroll Management</h1>
+            <div class="payroll-period">
+              <select id="payrollMonth">
+                <option value="03-2024">March 2024</option>
+                <option value="02-2024">February 2024</option>
+                <option value="01-2024">January 2024</option>
+              </select>
+              <button class="process-btn">
+                <i class="fas fa-cog"></i> Process Payroll
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <div class="payroll-summary">
+          <div class="summary-card">
+            <i class="fas fa-money-bill-wave"></i>
+            <div class="summary-info">
+              <h3>Total Payroll</h3>
+              <p>$145,000</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-users"></i>
+            <div class="summary-info">
+              <h3>Total Employees</h3>
+              <p>150</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <div class="summary-info">
+              <h3>Processed</h3>
+              <p>142</p>
+            </div>
+          </div>
+          <div class="summary-card">
+            <i class="fas fa-exclamation-circle"></i>
+            <div class="summary-info">
+              <h3>Pending</h3>
+              <p>8</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="payroll-filters">
+          <div class="search-bar">
+            <input type="text" placeholder="Search employee..." />
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="filter-options">
+            <select>
+              <option value="">Department</option>
+              <option value="it">IT</option>
+              <option value="hr">HR</option>
+              <option value="finance">Finance</option>
+            </select>
+            <select>
+              <option value="">Status</option>
+              <option value="processed">Processed</option>
+              <option value="pending">Pending</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="payroll-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Department</th>
+                <th>Basic Salary</th>
+                <th>Allowances</th>
+                <th>Deductions</th>
+                <th>Net Salary</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="employee-info">
+                    <img src="https://via.placeholder.com/40" alt="John Doe" />
+                    <span>John Doe</span>
+                  </div>
+                </td>
+                <td>IT</td>
+                <td>$5,000</td>
+                <td>$500</td>
+                <td>$750</td>
+                <td>$4,750</td>
+                <td><span class="status processed">Processed</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="view-btn"><i class="fas fa-eye"></i></button>
+                    <button class="download-btn">
+                      <i class="fas fa-download"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <!-- More payroll rows -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Payslip Modal -->
+        <div class="modal" id="payslipModal">
+          <div class="modal-content">
+            <h2>Payslip Details</h2>
+            <div class="payslip">
+              <div class="company-info">
+                <h3>Company Name</h3>
+                <p>Payslip for March 2024</p>
+              </div>
+              <div class="employee-details">
+                <div class="detail-group">
+                  <label>Employee Name:</label>
+                  <p>John Doe</p>
+                </div>
+                <div class="detail-group">
+                  <label>Employee ID:</label>
+                  <p>EMP001</p>
+                </div>
+                <div class="detail-group">
+                  <label>Department:</label>
+                  <p>IT</p>
+                </div>
+              </div>
+              <div class="salary-details">
+                <div class="earnings">
+                  <h4>Earnings</h4>
+                  <div class="detail-row">
+                    <span>Basic Salary</span>
+                    <span>$5,000</span>
+                  </div>
+                  <div class="detail-row">
+                    <span>HRA</span>
+                    <span>$300</span>
+                  </div>
+                  <div class="detail-row">
+                    <span>Transport</span>
+                    <span>$200</span>
+                  </div>
+                </div>
+                <div class="deductions">
+                  <h4>Deductions</h4>
+                  <div class="detail-row">
+                    <span>Tax</span>
+                    <span>$500</span>
+                  </div>
+                  <div class="detail-row">
+                    <span>Insurance</span>
+                    <span>$250</span>
+                  </div>
+                </div>
+                <div class="total">
+                  <div class="detail-row">
+                    <strong>Net Salary</strong>
+                    <strong>$4,750</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="download-btn">Download PDF</button>
+                <button class="close-btn">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="common.js"></script>
+    <script src="payroll.js"></script>
+  </body>
+</html>

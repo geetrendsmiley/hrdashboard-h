@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - HR System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar">
+        <div class="logo">
+          <h2>HR System</h2>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="hr-dashboard.html"><i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li>
+            <a href="employees.html"><i class="fas fa-users"></i>Employees</a>
+          </li>
+          <li>
+            <a href="attendance.html"><i class="fas fa-clock"></i>Attendance</a>
+          </li>
+          <li>
+            <a href="leave-management.html"
+              ><i class="fas fa-calendar-alt"></i>Leave Management</a
+            >
+          </li>
+          <li>
+            <a href="payroll.html"
+              ><i class="fas fa-money-bill-wave"></i>Payroll</a
+            >
+          </li>
+          <li>
+            <a href="performance.html"
+              ><i class="fas fa-chart-line"></i>Performance</a
+            >
+          </li>
+          <li>
+            <a href="reports.html"><i class="fas fa-file-alt"></i>Reports</a>
+          </li>
+          <li class="active">
+            <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
+          </li>
+          <li class="logout">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="sidebar">
+        <div class="logo">
+          <h2>HR System</h2>
+        </div>
+        <ul class="nav-links">
+          <li class="active">
+            <a href="#dashboard"><i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li>
+            <a href="#employees"><i class="fas fa-users"></i>Employees</a>
+          </li>
+          <li>
+            <a href="#attendance"><i class="fas fa-clock"></i>Attendance</a>
+          </li>
+          <li>
+            <a href="#leave"
+              ><i class="fas fa-calendar-alt"></i>Leave Management</a
+            >
+          </li>
+          <li>
+            <a href="#payroll"><i class="fas fa-money-bill-wave"></i>Payroll</a>
+          </li>
+          <li>
+            <a href="#performance"
+              ><i class="fas fa-chart-line"></i>Performance</a
+            >
+          </li>
+          <li>
+            <a href="#reports"><i class="fas fa-file-alt"></i>Reports</a>
+          </li>
+          <li>
+            <a href="#settings"><i class="fas fa-cog"></i>Settings</a>
+          </li>
+          <li class="logout">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>
+      </nav>
+      board -->
+      <nav class="sidebar">
+        <div class="logo">
+          <h2>HR System</h2>
+        </div>
+        <ul class="nav-links">
+          <li class="active">
+            <a href="#dashboard"><i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li>
+            <a href="#employees"><i class="fas fa-users"></i>Employees</a>
+          </li>
+          <li>
+            <a href="#attendance"><i class="fas fa-clock"></i>Attendance</a>
+          </li>
+          <li>
+            <a href="#leave"
+              ><i class="fas fa-calendar-alt"></i>Leave Management</a
+            >
+          </li>
+          <li>
+            <a href="#payroll"><i class="fas fa-money-bill-wave"></i>Payroll</a>
+          </li>
+          <li>
+            <a href="#performance"
+              ><i class="fas fa-chart-line"></i>Performance</a
+            >
+          </li>
+          <li>
+            <a href="#reports"><i class="fas fa-file-alt"></i>Reports</a>
+          </li>
+          <li>
+            <a href="#settings"><i class="fas fa-cog"></i>Settings</a>
+          </li>
+          <li class="logout">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <header>
+          <div class="header-content">
+            <h1>Settings</h1>
+          </div>
+        </header>
+
+        <div class="settings-container">
+          <div class="settings-nav">
+            <ul>
+              <li class="active"><a href="#general">General Settings</a></li>
+              <li><a href="#company">Company Profile</a></li>
+              <li><a href="#departments">Departments</a></li>
+              <li><a href="#leave-types">Leave Types</a></li>
+              <li><a href="#payroll">Payroll Settings</a></li>
+              <li><a href="#notifications">Notifications</a></li>
+              <li><a href="#security">Security</a></li>
+            </ul>
+          </div>
+
+          <div class="settings-content">
+            <!-- General Settings Section -->
+            <div class="settings-section active" id="general">
+              <h2>General Settings</h2>
+              <form class="settings-form">
+                <div class="form-group">
+                  <label>System Language</label>
+                  <select>
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Time Zone</label>
+                  <select>
+                    <option value="UTC">UTC</option>
+                    <option value="EST">Eastern Time</option>
+                    <option value="PST">Pacific Time</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Date Format</label>
+                  <select>
+                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                    <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Theme</label>
+                  <select>
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="system">System Default</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+
+            <!-- Company Profile Section -->
+            <div class="settings-section" id="company">
+              <h2>Company Profile</h2>
+              <form class="settings-form">
+                <div class="form-group">
+                  <label>Company Name</label>
+                  <input type="text" value="Your Company Name" />
+                </div>
+                <div class="form-group">
+                  <label>Address</label>
+                  <textarea>123 Business Street, City, Country</textarea>
+                </div>
+                <div class="form-group">
+                  <label>Contact Email</label>
+                  <input type="email" value="contact@company.com" />
+                </div>
+                <div class="form-group">
+                  <label>Phone</label>
+                  <input type="tel" value="+1 234 567 890" />
+                </div>
+                <div class="form-group">
+                  <label>Company Logo</label>
+                  <div class="logo-upload">
+                    <img
+                      src="https://via.placeholder.com/150"
+                      alt="Company Logo"
+                    />
+                    <button type="button">Change Logo</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Departments Section -->
+            <div class="settings-section" id="departments">
+              <h2>Departments</h2>
+              <div class="department-list">
+                <div class="department-item">
+                  <div class="department-info">
+                    <h4>IT Department</h4>
+                    <p>25 Employees</p>
+                  </div>
+                  <div class="department-actions">
+                    <button class="edit-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="delete-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- More departments -->
+              </div>
+              <button class="add-btn">
+                <i class="fas fa-plus"></i> Add Department
+              </button>
+            </div>
+
+            <!-- Leave Types Section -->
+            <div class="settings-section" id="leave-types">
+              <h2>Leave Types</h2>
+              <div class="leave-types-list">
+                <div class="leave-type-item">
+                  <div class="leave-type-info">
+                    <h4>Annual Leave</h4>
+                    <p>15 days per year</p>
+                  </div>
+                  <div class="leave-type-actions">
+                    <button class="edit-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="delete-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- More leave types -->
+              </div>
+              <button class="add-btn">
+                <i class="fas fa-plus"></i> Add Leave Type
+              </button>
+            </div>
+
+            <!-- Payroll Settings Section -->
+            <div class="settings-section" id="payroll">
+              <h2>Payroll Settings</h2>
+              <form class="settings-form">
+                <div class="form-group">
+                  <label>Pay Period</label>
+                  <select>
+                    <option value="monthly">Monthly</option>
+                    <option value="bi-weekly">Bi-weekly</option>
+                    <option value="weekly">Weekly</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Currency</label>
+                  <select>
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="GBP">GBP (£)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Tax Settings</label>
+                  <div class="tax-settings">
+                    <label>
+                      <input type="checkbox" checked /> Enable Tax Calculation
+                    </label>
+                    <input type="number" value="20" min="0" max="100" /> %
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Notifications Section -->
+            <div class="settings-section" id="notifications">
+              <h2>Notifications</h2>
+              <form class="settings-form">
+                <div class="notification-group">
+                  <h4>Email Notifications</h4>
+                  <div class="checkbox-group">
+                    <label>
+                      <input type="checkbox" checked /> Leave Requests
+                    </label>
+                    <label>
+                      <input type="checkbox" checked /> Payroll Processing
+                    </label>
+                    <label>
+                      <input type="checkbox" checked /> Performance Reviews
+                    </label>
+                    <label>
+                      <input type="checkbox" checked /> System Updates
+                    </label>
+                  </div>
+                </div>
+                <div class="notification-group">
+                  <h4>System Notifications</h4>
+                  <div class="checkbox-group">
+                    <label>
+                      <input type="checkbox" checked /> Desktop Notifications
+                    </label>
+                    <label>
+                      <input type="checkbox" checked /> Browser Notifications
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Security Section -->
+            <div class="settings-section" id="security">
+              <h2>Security Settings</h2>
+              <form class="settings-form">
+                <div class="form-group">
+                  <label>Password Policy</label>
+                  <div class="checkbox-group">
+                    <label>
+                      <input type="checkbox" checked /> Require Special
+                      Characters
+                    </label>
+                    <label>
+                      <input type="checkbox" checked /> Require Numbers
+                    </label>
+                    <label>
+                      <input type="checkbox" checked /> Minimum 8 Characters
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Two-Factor Authentication</label>
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="2fa" />
+                    <label for="2fa"></label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Session Timeout</label>
+                  <select>
+                    <option value="30">30 minutes</option>
+                    <option value="60">1 hour</option>
+                    <option value="120">2 hours</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-footer">
+          <button class="cancel-btn">Cancel</button>
+          <button class="save-btn">Save Changes</button>
+        </div>
+      </main>
+    </div>
+    <script src="common.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>
